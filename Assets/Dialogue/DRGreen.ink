@@ -7,6 +7,7 @@ Hello there! #speaker: Dr.Green #portrait:Dr_green_neutral #layout:left
 ->main
 
 ===main===
+//~disable_controls("PlayerArmature")
 How are you feeling today?
 +[Happy]
     ~playEmote("exclamation")

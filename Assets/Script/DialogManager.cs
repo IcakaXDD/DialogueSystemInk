@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using Ink.Runtime;
 using System;
@@ -157,17 +157,17 @@ public class DialogManager : MonoBehaviour
                 StopCoroutine(displayLineCoroutine);
             }
 
-            if(currentStory.Continue().Equals("")&& !currentStory.canContinue)
+            string line = currentStory.Continue(); 
+
+            if (string.IsNullOrWhiteSpace(line) && !currentStory.canContinue)
             {
                 StartCoroutine(ExitDialogueMode());
             }
             else
             {
                 HandleTags(currentStory.currentTags);
-                displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
+                displayLineCoroutine = StartCoroutine(DisplayLine(line));
             }
-
-            
             //DisplayChoises();
 
             
